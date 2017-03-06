@@ -1,11 +1,177 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset=utf-8 />
-  <title>Urban Data Patterns</title>
-</head>
-<body>
-  hi
 
+<head>
+    <meta charset=utf-8 />
+    <title>Urban Data Patterns</title>
+
+
+    <script src="js/d3.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+    	body{
+    		margin: 0;
+    		padding: 0;
+    	}
+    	#main {
+    		width: 2000px;
+    		height: 2000px;
+    		padding-left: 100px;
+    		padding-top: 100px;
+    	}
+
+        #bg_container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+.bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    z-index: -1;
+}
+
+#active_bg {
+}
+    	#description {
+    		
+    		padding: 20px;
+    		left: 100px;
+    		top: 100px;
+    		max-width: 600px;
+    		background-color: pink;
+    	}
+    	#numbering {
+
+    		font-size: 120px;
+    		color: black;
+    	}
+    	.entry{
+    		display: inline-block;
+    		vertical-align: top;
+    	}
+
+    </style>
+</head>
+
+<body>
+	
+    <div id="main">
+        <div id="content">
+
+        	<div id="description" class="entry">
+            <h1>Urban Data Patterns</h1>
+            <p>
+                Flexitarian fap chillwave raw denim, gentrify freegan tote bag hexagon +1 cliche meh leggings before they sold out meggings asymmetrical. Pickled vaporware marfa, cliche portland hoodie roof party vice chicharrones craft beer artisan small batch banh mi next level. Prism banjo master cleanse microdosing, subway tile messenger bag skateboard lomo mixtape pug activated charcoal helvetica wayfarers post-ironic blog. Meh YOLO coloring book offal venmo. IPhone freegan jianbing, humblebrag polaroid aesthetic typewriter viral. Scenester tbh polaroid neutra blog. Kogi tumeric you probably haven't heard of them subway tile salvia bushwick.
+            </p>
+            <p>
+                Squid truffaut listicle, letterpress lyft paleo VHS cray freegan succulents. Bushwick hella snackwave street art, before they sold out 8-bit fam meh beard post-ironic shoreditch chillwave. Taxidermy kitsch cold-pressed, gluten-free next level tofu tousled marfa heirloom brunch knausgaard. Cold-pressed sartorial pop-up, viral hashtag heirloom chambray quinoa af actually cliche PBR&B. Dreamcatcher brooklyn 90's, taxidermy man bun ennui before they sold out chicharrones. Portland microdosing chartreuse, distillery green juice etsy lomo tattooed bicycle rights poke tofu everyday carry fanny pack. Iceland kogi taxidermy direct trade vexillologist godard roof party.
+            </p>
+            <p>
+                Man braid bitters crucifix meh. VHS franzen hammock humblebrag neutra whatever. Heirloom post-ironic enamel pin yr, ennui church-key sustainable four dollar toast bespoke biodiesel photo booth shabby chic drinking vinegar artisan. Prism tattooed glossier, chambray chia tbh lumbersexual shabby chic single-origin coffee. Vice vinyl tousled single-origin coffee biodiesel umami. Health goth four loko thundercats, whatever deep v seitan before they sold out etsy beard. Truffaut cold-pressed authentic meggings affogato.
+            </p>
+            <p>
+                Unicorn shabby chic poutine post-ironic tattooed. Viral subway tile chillwave, quinoa single-origin coffee hoodie vinyl venmo actually. Lyft normcore chicharrones, kickstarter art party tumblr semiotics twee next level literally raw denim slow-carb small batch edison bulb viral. Leggings irony knausgaard meggings dreamcatcher, retro umami live-edge 8-bit. Cold-pressed blog keytar, shoreditch leggings woke meditation taxidermy man bun pour-over wayfarers lomo authentic. Sustainable fap ennui selvage. Chia bitters irony, crucifix cornhole street art try-hard ramps lo-fi. Oh. You need a little dummy text for your mockup? How quaint.
+            </p>
+            <p>
+                I bet you’re still using Bootstrap too…
+            </p>
+            </div>
+            <div id="numbering" class="entry">
+        	#1
+        	</div>
+
+        </div>
+        
+    </div>
+    <div id="bg_container">
+    </div>
+    <script type="text/javascript">
+    	
+        var images = ['img/image1.jpg','img/image2.jpg','img/image3.jpg'];
+        
+        //add background images
+        d3.select('#bg_container')
+            .selectAll('.bg')
+            .data(images)
+            .enter()
+            .append('img')
+            .attr('src',function(d){
+                //console.log('d',d);
+                return d;
+            })
+            .classed('bg',true)
+            .style('opacity',function(d,i){
+                return i==0 ? '1' : '0';
+            })
+            .classed('active',function(d,i){
+                return i==0;
+            })
+        d3.select('#numbering')
+                .text('#'+(1));
+
+        setInterval(changeBackground,5000);
+    	
+    	var currentIndex = 0;
+
+   
+        
+    	function changeBackground(){
+    		console.log('change background');
+    		currentIndex++;
+    		if(currentIndex>=images.length){
+    			currentIndex=0;
+    		}
+    		//var img = images[currentIndex];
+            d3.select('#bg_container')
+            .selectAll('.bg')
+            .data(images)
+            .classed('active',function(d,i){
+                return i==currentIndex;
+            })
+            .transition()
+            .duration(1000)
+            .style('opacity',function(d,i){
+                return i == currentIndex ? 1 : 0;
+            })
+
+            d3.select('#numbering')
+                .text('#'+(currentIndex+1));
+
+        }
+    	/*	d3.selectAll('#bg')
+    			.transition()
+    			.style('opacity','0')
+                .on('end',function(){
+                    console.log('hi',this);
+                    d3.selectAll('#bg')
+                        .attr('src',img)
+                        .transition()
+                        .style('opacity',1);
+                });*/
+
+             /*   d3.selectAll(".apple")
+  .transition() // First fade to green.
+    .style("fill", "green")
+  .transition() // Then red.
+    .style("fill", "red")
+  .transition() // Wait one second. Then brown, and remove.
+    .delay(1000)
+    .style("fill", "brown")
+    .remove();*/
+    			
+
+    	/*}*/
+    </script>
 </body>
+
 </html>
