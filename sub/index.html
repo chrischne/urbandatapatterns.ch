@@ -1,169 +1,14 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset=utf-8 />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Urban Data Patterns</title>
-
-
     <script src="js/d3.js"></script>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <style type="text/css">
-
-/*
-@font-face {
-  font-family: 'T-Star-Light' , Arial, Sans-Serif;
-  src: url('font/T-Star-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-   /*    url('font/T-Star-Light.woff2') format('woff2'), /* Super Modern Browsers */
-    /*   url('font/T-Star-Light.woff') format('woff'); /* Pretty Modern Browsers */
-/*}*/
-
-/*
-@font-face { 
-font-family: 'T-Star-Light';
-src: url('/font/T-Star-Light.eot');
-src: local('‚ò∫'), url('/font/T-Star-Light.woff') format('woff'), 
-url('/font/T-Star-Light.woff2') format('woff2'),
-url('/font/T-Star-Light.ttf') format('truetype');
-font-weight: normal;
-font-style: normal;
-}*/
-
-
-
-@font-face {
-  font-family: 'T-Star-Light';
-  src: url('T-Star-Light.eot?') format('eot'), url('T-Star-Light.woff') format('woff'), url('T-Star-Light.otf') format('opentype');
-}
-        
-
-    body {
-        margin: 0;
-        padding: 0;
-         font-family: 'T-Star-Light', Arial, sans-serif;
-    }
-
-    h1 {
-        /*font-size: px;*/
-        font-family: 'T-Star-Light', Arial, sans-serif;;
-        font-weight: bold;
-        font-size: 32px;
-    }
-
-       h2 {
-        /*font-size: px;*/
-        font-family: 'T-Star-Light', Arial, sans-serif;;
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 0;
-        margin-top: 20px;
-    }
-
-    p {
-        margin-top: 5px;
-        line-height: 20px;
-    }
-    
-
-    
-    #bg_container {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-       /* width: 2000px;*/
-    }
-    
-    .bg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: auto;
-        opacity: 1;
-        z-index: -1;
-    }
-    
-    #active_bg {}
-
-
-
-    
-
-    
-    .entry {
-        display: inline-block;
-        vertical-align: top;
-    }
-
-
-
-    @media (min-width: 600px) {
-      #main {
-       /* width: 2000px;
-        height: 2000px;*/
-        padding-left: 100px;
-        padding-top: 100px;
-       
-    }
-     #content {
-      
-       width: 80%;
-       min-width: 600px;
-       max-width: 800px;
-    }
-    
-    #description {
-        padding: 20px;
-        width: 70%;
-        min-width: 375px;
-        background-color: white;
-     
-    }
-    #numbering {
-    
-        width: 20%;
-        font-size: 130px;
-        font-weight: bold;
-        color: black;
-       
-    }
-}
-
-    @media (max-width: 600px) {
-       #main {
-        margin: 0;
-        padding: 0;
-        padding-top: 100px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-     #content {
-      /*  min-width: 500px;*/
-    
-    }
-     #description {
-        padding: 10px;
-       
-       /* left: 10px;
-        top: 10px;*/
-        background-color: white;
-    }
-      #numbering {
-        width: 20%;
-        font-size: 36px;
-        font-weight: bold;
-        color: black;
-        padding-left: 10px;
-        display: none;
-       
-    }
-}
-
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
 </head>
 
 <body>
@@ -172,36 +17,27 @@ font-style: normal;
             <div id="description" class="entry">
                 <h1>Urban Data Patterns</h1>
                 <h2>Einleitung</h2>
-<p>
-
-Die Summe der Daten, die in unserer heutigen Gesellschaft angehäuft werden,
-wächst rasant. Dadurch haben wir heute Zugang zu einer Fülle an Daten, die erst
-durch die Auswertung überhaupt zugänglich wird und Aussagekraft erhält. Genau
-darin liegt heute die grosse Herausforderung und das Potenzial im Bereich Big Data
-und generative Gestaltung.
-</p>
-<h2>Projektziel</h2>
-<p>Ziel des Projekts ist es, grosse Datenmengen zum städtischen Raum durch die
-Verschmelzung der beiden Kompetenzen Informationsgrafik und Data Science
-zugänglich zu machen – und dabei Ästhetik und Informationsgehalt gleichwertig
-zu gewichten. Es soll exploriert werden, was visuell und technisch möglich ist und
-wie sich die unterschiedlichen Kompetenzen und Herangehensweisen im Hinblick
-auf aussagekräftige Resultate gegenseitig befruchten können. Statt vorgefertigter
-Darstellungsmodelle und standardisierter Software sollen eigenständige Konzepte
-zur Datenvisualisierung und Programmierung aufeinander abgestimmt und gemeinsam
-entwickelt werden.
-</p>
-<h2>Kontakt:</h2>
-<p>mail@urbandatapatterns.ch</p>
-<h2>Bestellen:</h2>
-<p>Eine kurze Projektdokumentation bestehend aus sieben A5-Postkarten, die jeweils
-einen Ausschnitt aus den sieben Patterns zeigen und einem kurzen Projektbeschrieb
-inkl. Hülle kann per Mail bestellt werden.
-</p>
+                <p>
+                    Die Summe der Daten, die in unserer heutigen Gesellschaft angehäuft werden, wächst rasant. Dadurch haben wir heute Zugang zu einer Fülle an Daten, die erst durch die Auswertung überhaupt zugänglich wird und Aussagekraft erhält. Genau darin liegt heute die grosse Herausforderung und das Potenzial im Bereich Big Data und generative Gestaltung.
+                </p>
+                <h2>Projektziel</h2>
+                <p>Ziel des Projekts ist es, grosse Datenmengen zum städtischen Raum durch die Verschmelzung der beiden Kompetenzen Informationsgrafik und Data Science zugänglich zu machen – und dabei Ästhetik und Informationsgehalt gleichwertig zu gewichten. Es soll exploriert werden, was visuell und technisch möglich ist und wie sich die unterschiedlichen Kompetenzen und Herangehensweisen im Hinblick auf aussagekräftige Resultate gegenseitig befruchten können. Statt vorgefertigter Darstellungsmodelle und standardisierter Software sollen eigenständige Konzepte zur Datenvisualisierung und Programmierung aufeinander abgestimmt und gemeinsam entwickelt werden.
+                </p>
+                <h2>Kontakt:</h2>
+                <p>mail@urbandatapatterns.ch</p>
+                <h2>Bestellen:</h2>
+                <p>Eine kurze Projektdokumentation bestehend aus sieben A5-Postkarten, die jeweils einen Ausschnitt aus den sieben Patterns zeigen und einem kurzen Projektbeschrieb inkl. Hülle kann per Mail bestellt werden.
+                </p>
+                 <div id="logos">
+                <img class="logo" src="img/logo1.gif" >
+                 <img class="logo" src="img/logo2.gif" >
+                  <img  class="logo" src="img/logo3.gif" >
+                </div>
             </div>
             <div id="numbering" class="entry">
                 #1
             </div>
+
         </div>
     </div>
     <div id="bg_container">
@@ -258,29 +94,7 @@ inkl. Hülle kann per Mail bestellt werden.
             .text('#' + (currentIndex + 1));
 
     }
-    /*  d3.selectAll('#bg')
-                .transition()
-                .style('opacity','0')
-                .on('end',function(){
-                    console.log('hi',this);
-                    d3.selectAll('#bg')
-                        .attr('src',img)
-                        .transition()
-                        .style('opacity',1);
-                });*/
 
-    /*   d3.selectAll(".apple")
-  .transition() // First fade to green.
-    .style("fill", "green")
-  .transition() // Then red.
-    .style("fill", "red")
-  .transition() // Wait one second. Then brown, and remove.
-    .delay(1000)
-    .style("fill", "brown")
-    .remove();*/
-
-
-    /*}*/
     </script>
 </body>
 
