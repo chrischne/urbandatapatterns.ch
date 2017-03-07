@@ -3,12 +3,99 @@
 
 <head>
     <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Urban Data Patterns</title>
-
+    <script src="js/d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
 </head>
 
 <body>
-	udp
+    <div id="main">
+        <div id="content">
+            <div id="description" class="entry">
+                <h1>Urban Data Patterns</h1>
+                <h2>Einleitung</h2>
+                <p>
+                    Die Summe der Daten, die in unserer heutigen Gesellschaft angehäuft werden, wächst rasant. Dadurch haben wir heute Zugang zu einer Fülle an Daten, die erst durch die Auswertung überhaupt zugänglich wird und Aussagekraft erhält. Genau darin liegt heute die grosse Herausforderung und das Potenzial im Bereich Big Data und generative Gestaltung.
+                </p>
+                <h2>Projektziel</h2>
+                <p>Ziel des Projekts ist es, grosse Datenmengen zum städtischen Raum durch die Verschmelzung der beiden Kompetenzen Informationsgrafik und Data Science zugänglich zu machen – und dabei Ästhetik und Informationsgehalt gleichwertig zu gewichten. Es soll exploriert werden, was visuell und technisch möglich ist und wie sich die unterschiedlichen Kompetenzen und Herangehensweisen im Hinblick auf aussagekräftige Resultate gegenseitig befruchten können. Statt vorgefertigter Darstellungsmodelle und standardisierter Software sollen eigenständige Konzepte zur Datenvisualisierung und Programmierung aufeinander abgestimmt und gemeinsam entwickelt werden.
+                </p>
+                <h2>Kontakt:</h2>
+                <p>mail@urbandatapatterns.ch</p>
+                <h2>Bestellen:</h2>
+                <p>Eine kurze Projektdokumentation bestehend aus sieben A5-Postkarten, die jeweils einen Ausschnitt aus den sieben Patterns zeigen und einem kurzen Projektbeschrieb inkl. Hülle kann per Mail bestellt werden.
+                </p>
+                 <div id="logos">
+                <img class="logo" src="img/logo1.gif" >
+                 <img class="logo" src="img/logo2.gif" >
+                  <img  class="logo" src="img/logo3.gif" >
+                </div>
+            </div>
+            <div id="numbering" class="entry">
+                #1
+            </div>
+
+        </div>
+    </div>
+    <div id="bg_container">
+    </div>
+    <script type="text/javascript">
+    var images = ['img/image1.png', 'img/image2.png'];
+
+    //add background images
+    d3.select('#bg_container')
+        .selectAll('.bg')
+        .data(images)
+        .enter()
+        .append('img')
+        .attr('src', function(d) {
+            //console.log('d',d);
+            return d;
+        })
+        .classed('bg', true)
+        .style('opacity', function(d, i) {
+            return i == 0 ? '1' : '0';
+        })
+        .classed('active', function(d, i) {
+            return i == 0;
+        })
+    d3.select('#numbering')
+        .text('#' + (1));
+
+    setInterval(changeBackground, 5000);
+
+    var currentIndex = 0;
+
+
+
+    function changeBackground() {
+        console.log('change background');
+        currentIndex++;
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        //var img = images[currentIndex];
+        d3.select('#bg_container')
+            .selectAll('.bg')
+            .data(images)
+            .classed('active', function(d, i) {
+                return i == currentIndex;
+            })
+            .transition()
+            .duration(1000)
+            .style('opacity', function(d, i) {
+                return i == currentIndex ? 1 : 0;
+            })
+
+        d3.select('#numbering')
+            .text('#' + (currentIndex + 1));
+
+    }
+
+    </script>
 </body>
 
 </html>
