@@ -35,6 +35,12 @@
         margin-top: 5px;
         line-height: 20px;
     }
+
+    #dank{
+        font-family: 'T-Star-Light', Arial, sans-serif;
+        font-size: 10px;
+    }
+    
     
     #bg_container {
         position: absolute;
