@@ -29,7 +29,7 @@
 var imgDefer = document.getElementsByClassName('bg');
 console.log(imgDefer.length);
 
-d3.select('#status').text('imgdefer.length: ' + imgDefer.length);
+d3.select('#status').text('imgdefer.length: ' + imgDefer.length).style('display','none');
 for (var i=0; i<imgDefer.length; i++) {
 if(imgDefer[i].getAttribute('data-src')) {
 imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
@@ -87,7 +87,7 @@ imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
         <div id="content">
         <div id="status">status</div>
             <div id="description" class="entry">
-                <h1>    <a href="http://urbandatapatterns.ch">Urban Data Patternzzzz</a></h1>
+                <h1>    <a href="http://urbandatapatterns.ch">Urban Data Patterns</a></h1>
 
                 <p>
                     Unsere Gesellschaft produziert eine Fülle an Daten, die erst durch die Auswertung und Darstellung zugänglich wird und Aussagekraft erhält. In der Sichtbarmachung komplexer Daten liegt ein grosses unausgeschöpftes Potenzial und ein wichtiges, zukunftsweisendes Handlungsfeld. Das Projekt «Urban Data Patterns» befindet sich an der Schnittstelle zwischen Visueller Gestaltung und Data Science und hat die Entwicklung eigenständiger Konzepte zur Visualisierung grosser Datenmengen zum Ziel. Die im Projekt verwendeten Daten geben Auskunft über verschiedene Aspekte des städtischen Alltagslebens (z.B. Fundgegenstände, Fahrgastzahlen öV, Luftschadstoffe etc.). Dieser Blick auf die Stadt und ihre Daten aus der Perspektive der Informationsgrafik und Programmierung ermöglicht eine neue Form der Exploration der Daten und liefert ungewohnte, neue Erkenntnisse.
@@ -137,13 +137,13 @@ imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
                     <br>
                     <br>
                     Mit freundlicher Unterstützung von: <br>
-                    Jubiläumsstiftung Schweizer Mobiliar Versicherungsgesellschaft
+                    Jubiläumsstiftung <a href="https://www.mobiliar.ch" target="_blank">Schweizer Mobiliar Versicherungsgesellschaft</a>
                     
                 </div>
                 <div id="logos">
-                    <img class="logo" src="img/logo1.gif">
-                    <img class="logo" src="img/logo2.gif">
-                    <img class="logo" src="img/logo3.gif">
+                   <a href="http://bernerdesignstiftung.ch"  target="_blank"><img class="logo" src="img/logo1.gif"></a> 
+                   <a href="https://prohelvetia.ch"  target="_blank"><img class="logo" src="img/logo2.gif"></a> 
+                   <a href="https://www.bgbern.ch/"  target="_blank"> <img class="logo" src="img/logo3.gif"></a>
                 </div>
             </div>
             <div id="numbering" class="entry">
