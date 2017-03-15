@@ -52,7 +52,7 @@
       /*  border: 1px solid black;*/
     }
 
-    #dank{
+    #dank, #dank p{
         margin-top: 60px;
         margin-bottom: 20px;
         font-family: 'T-Star-Light', Arial, sans-serif;
