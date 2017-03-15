@@ -16,8 +16,25 @@
         m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
+
+
     ga('create', 'UA-128368-2', 'auto');
     ga('send', 'pageview');
+
+
+
+       function init() {
+        console.log('init');
+var imgDefer = document.getElementsByTagName('img');
+for (var i=0; i<imgDefer.length; i++) {
+if(imgDefer[i].getAttribute('data-src')) {
+imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+} } }
+
+    window.onload = init;
+
+
+
     </script>
     <script src="js/d3.js"></script>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
@@ -154,16 +171,6 @@
     setInterval(changeBackground, 5000);
    var currentIndex = 0;
 
-
-       function init() {
-        console.log('init');
-var imgDefer = document.getElementsByTagName('img');
-for (var i=0; i<imgDefer.length; i++) {
-if(imgDefer[i].getAttribute('data-src')) {
-imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
-} } }
-
-    window.onload = init;
 
 
     function changeBackground() {
