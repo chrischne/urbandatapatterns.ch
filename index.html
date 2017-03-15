@@ -25,7 +25,9 @@
 
        function init() {
         console.log('init');
+
 var imgDefer = document.getElementsByTagName('img');
+console.log(imgDefer.length);
 for (var i=0; i<imgDefer.length; i++) {
 if(imgDefer[i].getAttribute('data-src')) {
 imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
