@@ -53,7 +53,7 @@
     }
 
     #dank, #dank p{
-        margin-top: 60px;
+        margin-top: 40px;
         margin-bottom: 20px;
         font-family: 'T-Star-Light', Arial, sans-serif;
         font-size: 11px;
@@ -113,6 +113,11 @@ ul.share-buttons .sr-only {
   overflow: hidden;
 }
 
+#logos {
+   /* border: 1px solid black;*/
+
+}
+
     
     @media (min-width: 600px) {
         #main {
@@ -141,6 +146,7 @@ ul.share-buttons .sr-only {
         }
         .logo {
         margin-right: 5%;
+ vertical-align: top;
         }
     }
     
@@ -172,6 +178,7 @@ ul.share-buttons .sr-only {
         }
         .logo {
             margin-right: 20px;
+             vertical-align: top;
              zoom: 60%;
         }
     }
