@@ -137,7 +137,7 @@
         .data(images)
         .enter()
         .append('img')
-        .attr('src', function(d) {
+        .attr('data-src', function(d) {
             //console.log('d',d);
             return d;
         })
@@ -152,9 +152,18 @@
         .text('#' + (1));
 
     setInterval(changeBackground, 5000);
+   var currentIndex = 0;
 
-    var currentIndex = 0;
 
+       function init() {
+        console.log('init');
+var imgDefer = document.getElementsByTagName('img');
+for (var i=0; i<imgDefer.length; i++) {
+if(imgDefer[i].getAttribute('data-src')) {
+imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+} } }
+
+    window.onload = init;
 
 
     function changeBackground() {
