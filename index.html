@@ -33,6 +33,9 @@ d3.select('#status').text('imgdefer.length: ' + imgDefer.length);
 for (var i=0; i<imgDefer.length; i++) {
 if(imgDefer[i].getAttribute('data-src')) {
 imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+
+  setInterval(changeBackground, 7000);
+
 } } }
 
     window.onload = init;
@@ -44,7 +47,7 @@ imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- Begin Jekyll SEO tag v2.1.0 -->
-    <title>Urban Data Patterns</title>
+    <title>Urban Data Patternzzz</title>
     <meta name="description" content="«Urban Data Patterns» befindet sich an der Schnittstelle zwischen Visueller Gestaltung und Data Science und hat die Entwicklung eigenständiger Konzepte zur Visualisierung grosser Datenmengen zum Ziel." />
     <link rel="canonical" href="http://www.urbandatapatterns.ch/" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -174,7 +177,7 @@ imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
     d3.select('#numbering')
         .text('#' + (1));
 
-    setInterval(changeBackground, 5000);
+  
    var currentIndex = 0;
 
 
