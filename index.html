@@ -29,7 +29,7 @@ var currentIndex = 0;
     function init() {
         console.log('init');
 
-        setTimeout(delayedInit,3000);
+        setTimeout(delayedInit,500);
 
     }
 
@@ -73,7 +73,7 @@ var currentIndex = 0;
             }
         }
 
-        setTimeout(initBackground,3000);
+        setTimeout(initBackground,500);
     }
 
     window.onload = init;
@@ -83,6 +83,8 @@ var currentIndex = 0;
     function initBackground() {
         console.log('initBackground');
 
+        //change the background the first time.
+        changeBackground();
         setInterval(changeBackground,7000);
         
     }
