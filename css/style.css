@@ -133,6 +133,7 @@ ul.share-buttons .sr-only {
         }
         #description {
             padding: 20px;
+            padding-top: 10px;
             width: 70%;
             min-width: 440px;
             background-color: white;
@@ -163,6 +164,7 @@ ul.share-buttons .sr-only {
         }
         #description {
             padding: 10px;
+            padding-top: 5px;
             /* left: 10px;
         top: 10px;*/
             background-color: white;
