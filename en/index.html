@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+
+
+    ga('create', 'UA-128368-2', 'auto');
+    ga('send', 'pageview');
+
+var currentIndex = 0;
+        var images = ['../img/image1.png', '../img/image2.png', '../img/image3.png', '../img/image4.png', '../img/image5.png', '../img/image6.png', '../img/image7.png'];
+
+
+    function init() {
+        console.log('init');
+
+        setTimeout(delayedInit,500);
+
+    }
+
+    function delayedInit(){
+
+    	console.log('delayedInit');
+
+
+
+        console.log('images', images);
+        //add background images
+        d3.select('#bg_container')
+            .selectAll('.bg')
+            .data(images)
+            .enter()
+            .append('img')
+            .attr('data-src', function(d) {
+                //console.log('d',d);
+                return d;
+            })
+            .classed('bg', true)
+            .style('opacity', function(d, i) {
+                //return i == 0 ? '1' : '0';
+                return 0;
+            })
+            .classed('active', function(d, i) {
+            	return false;
+                //return i == 0;
+            });
+        
+       /* d3.select('#numbering')
+            .text('#' + (1));*/
+
+
+           //set sources
+        var imgDefer = document.getElementsByClassName('bg');
+
+        for (var i = 0; i < imgDefer.length; i++) {
+            if (imgDefer[i].getAttribute('data-src')) {
+                imgDefer[i].setAttribute('src', imgDefer[i].getAttribute('data-src'));
+            }
+        }
+
+        setTimeout(initBackground,1000);
+    }
+
+    window.onload = init;
+
+
+
+    function initBackground() {
+        console.log('initBackground');
+
+        //change the background the first time.
+        changeBackground();
+        setInterval(changeBackground,7000);
+        
+    }
+
+
+    function changeBackground() {
+        console.log('change background');
+        
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        //var img = images[currentIndex];
+        d3.select('#bg_container')
+            .selectAll('.bg')
+            .data(images)
+            .classed('active', function(d, i) {
+                return i == currentIndex;
+            })
+            .transition()
+            .duration(1000)
+            .style('opacity', function(d, i) {
+                return i == currentIndex ? 1 : 0;
+            })
+
+        d3.select('#numbering')
+            .text('#' + (currentIndex + 1));
+
+
+           currentIndex++;
+    }
+    </script>
+    <script src="js/d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Begin Jekyll SEO tag v2.1.0 -->
+    <title>Urban Data Patterns</title>
+    <meta name="description" content="«Urban Data Patterns» befindet sich an der Schnittstelle zwischen Visueller Gestaltung und Data Science und hat die Entwicklung eigenständiger Konzepte zur Visualisierung grosser Datenmengen zum Ziel." />
+    <link rel="canonical" href="http://www.urbandatapatterns.ch/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@chrischneid" />
+    <meta name="twitter:creator" content="@chrischneid" />
+    <meta property="og:url" content="http://www.urbandatapatterns.ch/" />
+    <meta property="og:title" content="Urban Data Patterns" />
+    <meta property="og:site_name" content="Urban Data Patterns" />
+    <meta property="og:description" content="«Urban Data Patterns» befindet sich an der Schnittstelle zwischen Visueller Gestaltung und Data Science und hat die Entwicklung eigenständiger Konzepte zur Visualisierung grosser Datenmengen zum Ziel." />
+    <meta property="og:image" content="http://urbandatapatterns.ch/img/tweet_image7.png" />
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Urban Data Patterns",
+        "image": "http://urbandatapatterns.ch/img/tweet_image7.png",
+        "datePublished": "2017-03-23T00:00:00+00:00",
+        "description": "«Urban Data Patterns» befindet sich an der Schnittstelle zwischen Visueller Gestaltung und Data Science und hat die Entwicklung eigenständiger Konzepte zur Visualisierung grosser Datenmengen zum Ziel.",
+        "publisher": {
+            "@type": "Organization",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://urbandatapatterns.ch/img/tweet_image7.png"
+            }
+        },
+        "url": "http://urbandatapatterns.ch/"
+    }
+    </script>
+    <!-- End Jekyll SEO tag -->
+</head>
+
+<body>
+    <div id="main">
+        <div id="content">
+            <div id="description" class="entry">
+                <h1>    <a href="http://urbandatapatterns.ch">Urban Data Patterns</a></h1>
+                <p>
+                    Unsere Gesellschaft produziert eine Fülle an Daten, die erst durch die Auswertung und Darstellung zugänglich wird und Aussagekraft erhält. In der Sichtbarmachung komplexer Daten liegt ein grosses unausgeschöpftes Potenzial und ein wichtiges, zukunftsweisendes Handlungsfeld. Das Projekt «Urban Data Patterns» befindet sich an der Schnittstelle zwischen Visueller Gestaltung und Data Science und hat die Entwicklung eigenständiger Konzepte zur Visualisierung grosser Datenmengen zum Ziel. Die im Projekt verwendeten Daten geben Auskunft über verschiedene Aspekte des städtischen Alltagslebens (z.B. Fundgegenstände, Fahrgastzahlen öV, Luftschadstoffe etc.). Dieser Blick auf die Stadt und ihre Daten aus der Perspektive der Informationsgrafik und Programmierung ermöglicht eine neue Form der Exploration der Daten und liefert ungewohnte, neue Erkenntnisse.
+                </p>
+                <h2>Ausstellung</h2>
+                <p>Das Projekt wird im Rahmen der Ausstellung «Bestform» der Berner Designstiftung vom 24. März bis 30. April 2017 im Kornhausforum Bern präsentiert. 
+                </p>
+                <h2>Bestellung</h2>
+                <p>Eine kurze Projektdokumentation bestehend aus sieben DIN A5-Postkarten, die jeweils einen Ausschnitt aus den sieben Patterns zeigen und einem kurzen Projektbeschrieb kann per E-Mail bestellt werden. (CHF 20.-)
+                </p>
+                <h2>Kontakt</h2>
+                <p>
+                    <script>
+                    document.write('<' + 'a' + ' ' + 'h' + 'r' + 'e' + 'f' + '=' + "'" + 'm' + '&' + '#' + '9' + '7' + ';' + '&' + '#' + '1' + '0' + '5' + ';' + 'l' + 't' + 'o' + '&' +
+                        '#' + '5' + '8' + ';' + '&' + '#' + '1' + '0' + '9' + ';' + '&' + '#' + '9' + '7' + ';' + '&' + '#' + '1' + '0' + '5' + ';' + 'l' + '&' + '#' + '3' +
+                        '7' + ';' + '4' + '&' + '#' + '4' + '8' + ';' + '&' + '#' + '1' + '1' + '7' + ';' + 'r' + '%' + '&' + '#' + '5' + '4' + ';' + '2' + '&' + '#' + '9' +
+                        '7' + ';' + 'n' + '%' + '6' + '4' + 'a' + 't' + 'a' + 'p' + 'a' + '&' + '#' + '1' + '1' + '6' + ';' + '%' + '7' + '4' + 'e' + 'r' + 'n' + 's' + '&' +
+                        '#' + '4' + '6' + ';' + 'c' + 'h' + "'" + '>' + 'm' + '&' + '#' + '9' + '7' + ';' + 'i' + '&' + '#' + '1' + '0' + '8' + ';' + '&' + '#' + '6' + '4' +
+                        ';' + 'u' + 'r' + 'b' + 'a' + 'n' + 'd' + 'a' + 't' + 'a' + 'p' + '&' + '#' + '9' + '7' + ';' + 't' + 't' + 'e' + 'r' + 'n' + '&' + '#' + '1' + '1' +
+                        '5' + ';' + '&' + '#' + '4' + '6' + ';' + 'c' + 'h' + '<' + '/' + 'a' + '>');
+                    </script>
+                    <noscript>[Turn on JavaScript to see the email address]</noscript>
+                    <br>
+                    <a class="websites" href="http://hahn-zimmermann.ch/" target="_blank">Hahn+Zimmermann</a>, <a class="websites" href="http://christianschneider.ch" target="_blank">Christian Schneider</a>
+                </p>
+                <div id="social">
+                    <ul class="share-buttons">
+                        <li>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Furbandatapatterns.ch&t=Urban%20Data%20Patterns" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="img/flat_web_icon_set/inverted/Facebook.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Furbandatapatterns.ch&text=Urban%20Data%20Patterns:%20http%3A%2F%2Furbandatapatterns.ch/&via=chrischneid" target="_blank" title="Tweet"><img alt="Tweet" src="img/flat_web_icon_set/inverted/Twitter.png"></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/share?url=http%3A%2F%2Furbandatapatterns.ch" target="_blank" title="Share on Google+"><img alt="Share on Google+" src="img/flat_web_icon_set/inverted/Google+.png"></a>
+                        </li>
+                        <!--  <li>
+                            <a href="https://twitter.com/intent/tweet?source=http://urbandatapatterns.ch/&text=Urban%20Data%20Patterns:%20http://urbandatapatterns.ch/&via=chrischneid" target="_blank" title="Tweet"><img alt="Tweet" src="img/flat_web_icon_set/inverted/Twitter.png"></a>
+                        </li>-->
+                    </ul>
+                </div>
+                <div id="dank">
+                    Herzlichen Dank für die Bereitstellung der Daten: Bernmobil, Fundbüro der Stadt Bern, Geomatik+Vermessung Zürich, Open Data Zürich, Stadtgrün Bern, Tiefbauamt der Stadt Zürich, Umwelt- und Gesundheitsschutz der Stadt Zürich.
+                    <br>
+                    <br> Mit freundlicher Unterstützung von:
+                    <br> Jubiläumsstiftung <a href="https://www.mobiliar.ch" target="_blank">Schweizer Mobiliar Versicherungsgesellschaft</a>
+                </div>
+                <div id="logos">
+                    <a href="http://bernerdesignstiftung.ch" target="_blank"><img class="logo" src="img/logo1.gif"></a>
+                    <a href="https://www.bgbern.ch/" target="_blank"> <img class="logo" src="img/logo3.gif"></a>
+                    <a href="https://prohelvetia.ch" target="_blank"><img class="logo" src="img/logo2.gif"></a>
+                </div>
+            </div>
+            <div id="numbering" class="entry">
+                #1
+            </div>
+        </div>
+    </div>
+    <div id="bg_container">
+    </div>
+</body>
+
+</html>
