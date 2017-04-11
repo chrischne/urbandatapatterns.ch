@@ -23,7 +23,7 @@
     ga('send', 'pageview');
 
 var currentIndex = 0;
-        var images = ['../img/image1.png', '../img/image2.png', '../img/image3.png', '../img/image4.png', '../img/image5.png', '../img/image6.png', '../img/image7.png'];
+        var images = ['../img/image1.png', '../img/image2.png', '../img/image3.png', '../img/image4.png', '../img/image5.png', '../img/image6.png', '../img/image7.png','../img/image8.png'];
 
 
     function init() {
@@ -110,7 +110,10 @@ var currentIndex = 0;
             })
 
         d3.select('#numbering')
-            .text('#' + (currentIndex + 1));
+            .text(function(d){
+                //dont return anything when the image is the one of the books
+                return currentIndex == 7 ? '' : '#' + (currentIndex + 1)
+            });
 
 
            currentIndex++;
