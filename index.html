@@ -84,6 +84,9 @@
         return i == currentIndex ? 1 : 0;
         })
         d3.select('#numbering')
+        .classed('white',function(d){
+            return currentIndex == 8 || currentIndex == 9;
+        })
         .text(function(d){
         //dont return anything when the image is the one of the books
         return currentIndex == 7 ? '' : '#' + (currentIndex + 1)

@@ -20,6 +20,10 @@
     text-decoration: none;
 }
 
+.white{
+    color: white;
+}
+
 .websites {
     text-decoration: underline;
 }
