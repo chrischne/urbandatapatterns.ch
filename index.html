@@ -87,6 +87,9 @@
         .classed('white',function(d){
             return currentIndex == 8 || currentIndex == 9;
         })
+        .classed('black',function(d){
+            return currentIndex != 8 && currentIndex != 9;
+        })
         .text(function(d){
         //dont return anything when the image is the one of the books
         return currentIndex == 7 ? '' : '#' + (currentIndex + 1)

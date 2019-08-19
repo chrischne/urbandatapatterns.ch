@@ -24,6 +24,10 @@
     color: white;
 }
 
+.black{
+    color: black;
+}
+
 .websites {
     text-decoration: underline;
 }
@@ -147,7 +151,6 @@ ul.share-buttons .sr-only {
             width: 20%;
             font-size: 130px;
             font-weight: bold;
-            color: black;
         }
         .logo {
         margin-right: 5%;
